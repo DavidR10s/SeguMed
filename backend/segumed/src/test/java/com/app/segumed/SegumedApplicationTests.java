@@ -1,14 +1,13 @@
-
-package com.segumed;
+package com.app.segumed;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class SeguMedApplicationTest {
-    
-    @Test
+class SegumedApplicationTests {
+
+	@Test
 	void contextLoads() {
 	}
-    
+
 }

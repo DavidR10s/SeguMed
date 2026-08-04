@@ -2,9 +2,7 @@ FROM eclipse-temurin:21-jdk-alpine
 
 WORKDIR /app
 
-COPY . .
+RUN apk add --no-cache bash
 
-RUN chmod +x mvnw
+CMD ["tail", "-f", "/dev/null"]
 
-
-CMD ["./mvnw", "spring-boot:run"]
