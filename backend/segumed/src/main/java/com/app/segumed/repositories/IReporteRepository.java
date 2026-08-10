@@ -1,5 +1,8 @@
 package com.app.segumed.repositories;
 
-public interface IReporteRepository {
+import com.app.segumed.models.Reporte;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IReporteRepository extends JpaRepository<Reporte, Long> {
 
 }

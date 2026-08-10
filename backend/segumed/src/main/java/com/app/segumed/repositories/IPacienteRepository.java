@@ -1,5 +1,8 @@
 package com.app.segumed.repositories;
 
-public interface IPacienteRepository {
+import com.app.segumed.models.Paciente;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IPacienteRepository extends JpaRepository<Paciente, Long> {
 
 }
