@@ -2,6 +2,7 @@ package com.app.segumed.models;
 
 import jakarta.persistence.*;
 import com.app.segumed.enums.RoleUsuario;
+import jakarta.validation.constraints.Email;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,7 @@ public class Usuario
     private String username;
 
     @Column(nullable = false, unique = true)
+    @Email
     private String email;
 
     @Column(nullable = false)
