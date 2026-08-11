@@ -31,6 +31,15 @@ public class Usuario
     {
     }
 
+    public Usuario(Long id, String username, String email, String password, RoleUsuario role) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
+    
+
     // Getters and setters
     public Long getId() 
     {

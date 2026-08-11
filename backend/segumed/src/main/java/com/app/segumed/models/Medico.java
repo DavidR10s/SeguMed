@@ -1,18 +1,14 @@
 package com.app.segumed.models;
 
+import com.app.segumed.enums.RoleUsuario;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+
 import java.util.List;
 
 @Entity
 @Table(name = "medicos")
 public class Medico extends Usuario 
 {
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id_usuario")
-    private Usuario usuario;
 
     @Column(nullable = false)
     private String especialidad;
@@ -31,7 +27,15 @@ public class Medico extends Usuario
         super();
     }
 
-
+    public Medico(String especialidad, List<Tratamiento> tratamientos, List<Reporte> reportes, List<Cita> citas, Long id, String username, String email, String password, RoleUsuario role) {
+        super(id, username, email, password, role);
+        this.especialidad = especialidad;
+        this.tratamientos = tratamientos;
+        this.reportes = reportes;
+        this.citas = citas;
+    }
+    
+    
     // Getters and setters
     public String getEspecialidad() 
     {
@@ -41,4 +45,83 @@ public class Medico extends Usuario
     {
         this.especialidad = especialidad;
     }
+
+    public List<Tratamiento> getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(List<Tratamiento> tratamientos) {
+        this.tratamientos = tratamientos;
+    }
+
+    public List<Reporte> getReportes() {
+        return reportes;
+    }
+
+    public void setReportes(List<Reporte> reportes) {
+        this.reportes = reportes;
+    }
+
+    public List<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(List<Cita> citas) {
+        this.citas = citas;
+    }
+    
+    //OVERRIDE
+
+    @Override
+    public void setRole(RoleUsuario role) {
+        super.setRole(role);
+    }
+
+    @Override
+    public RoleUsuario getRole() {
+        return super.getRole(); 
+    }
+
+    @Override
+    public void setPassword(String password) {
+        super.setPassword(password); 
+    }
+
+    @Override
+    public String getPassword() {
+        return super.getPassword();
+    }
+
+    @Override
+    public void setEmail(String email) {
+        super.setEmail(email);
+    }
+
+    @Override
+    public String getEmail() {
+        return super.getEmail(); 
+    }
+
+    @Override
+    public void setUsername(String username) {
+        super.setUsername(username); 
+    }
+
+    @Override
+    public String getUsername() {
+        return super.getUsername();
+    }
+
+    @Override
+    public void setId(Long id) {
+        super.setId(id); 
+    }
+
+    @Override
+    public Long getId() {
+        return super.getId(); 
+    }
+    
+    
+    
 }
