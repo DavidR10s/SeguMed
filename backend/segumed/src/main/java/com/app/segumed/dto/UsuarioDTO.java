@@ -7,15 +7,15 @@ public class UsuarioDTO {
     private Long id;
     private String username;
     private String email;
-    private RoleUsuario rol;
+    private RoleUsuario role;
 
     public UsuarioDTO(){}
 
-    public UsuarioDTO(Long id, String username, String email, RoleUsuario rol) {
+    public UsuarioDTO(Long id, String username, String email, RoleUsuario role) {
         this.id = id;
         this.username = username;
         this.email = email;
-        this.rol = rol;
+        this.role = role;
     }
     
     
@@ -32,8 +32,8 @@ public class UsuarioDTO {
         return email;
     }
 
-    public RoleUsuario getRol() {
-        return rol;
+    public RoleUsuario getRole() {
+        return role;
     }
 
     public void setId(Long id) {
@@ -48,8 +48,8 @@ public class UsuarioDTO {
         this.email = email;
     }
 
-    public void setRol(RoleUsuario rol) {
-        this.rol = rol;
+    public void setRole(RoleUsuario role) {
+        this.role = role;
     }
     
     

@@ -24,8 +24,8 @@ public class MedicoDTO extends UsuarioDTO {
     }
 
     @Override
-    public void setRol(RoleUsuario rol) {
-        super.setRol(rol); 
+    public void setRole(RoleUsuario role) {
+        super.setRole(role); 
     }
 
     @Override
@@ -44,8 +44,8 @@ public class MedicoDTO extends UsuarioDTO {
     }
 
     @Override
-    public RoleUsuario getRol() {
-        return super.getRol(); 
+    public RoleUsuario getRole() {
+        return super.getRole(); 
     }
 
     @Override

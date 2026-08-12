@@ -19,8 +19,8 @@ public class PacienteDTO extends UsuarioDTO {
         this.grupoSanguineo = grupoSanguineo;
     }
 
-    public PacienteDTO(Long id, String username, String email, RoleUsuario rol, String grupoSanguineo) {
-        super(id, username, email, rol);
+    public PacienteDTO(Long id, String username, String email, RoleUsuario role, String grupoSanguineo) {
+        super(id, username, email, role);
         this.grupoSanguineo = grupoSanguineo;
     }
 
@@ -69,8 +69,8 @@ public class PacienteDTO extends UsuarioDTO {
     //OVERRIDE
 
     @Override
-    public void setRol(RoleUsuario rol) {
-        super.setRol(rol); 
+    public void setRole(RoleUsuario role) {
+        super.setRole(role); 
     }
 
     @Override
@@ -89,8 +89,8 @@ public class PacienteDTO extends UsuarioDTO {
     }
 
     @Override
-    public RoleUsuario getRol() {
-        return super.getRol(); 
+    public RoleUsuario getRole() {
+        return super.getRole(); 
     }
 
     @Override
