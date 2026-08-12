@@ -3,32 +3,54 @@ package com.app.segumed.services.paciente;
 import com.app.segumed.dto.PacienteDTO;
 import com.app.segumed.models.Paciente;
 import com.app.segumed.repositories.IPacienteRepository;
+import com.app.segumed.mappers.PacienteMapper;
+
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PacienteService implements IPacienteService{
     
     private IPacienteRepository repo;
+    private PacienteMapper mapper;
 
     @Override
     public List<PacienteDTO> listarPacientes() {
-        return (List<PacienteDTO>) (Paciente) repo.findAll();
+        
+        List<Paciente> pacientes = repo.findAll();
+        
+        return pacientes.stream().map(mapper::toDTO).collect(Collectors.toList());
     }
 
     @Override
-    public PacienteDTO crearPaciente(PacienteDTO medicoDto) {
-        return null;
+    public PacienteDTO crearPaciente(PacienteDTO pacienteDto) {
+        Paciente paciente = mapper.toEntity(pacienteDto);
+        
+        Paciente guardado = repo.save(paciente);
+        
+        return mapper.toDTO(guardado);
     }
 
     @Override
-    public PacienteDTO actualizarPaciente(Long id, PacienteDTO medicoDto) {
-        return null;
+    public PacienteDTO actualizarPaciente(Long id, PacienteDTO pacienteDto) {
+        Paciente pacienteExistente = repo.findById(id).orElse(null);
+        
+        pacienteExistente.setAltura(pacienteDto.getAltura());
+        pacienteExistente.setEmail(pacienteDto.getEmail());
+        pacienteExistente.setGenero(pacienteDto.getGenero());
+        pacienteExistente.setPeso(pacienteDto.getPeso());
+        pacienteExistente.setGrupoSanguineo(pacienteDto.getGrupoSanguineo());
+        pacienteExistente.setUsername(pacienteDto.getUsername());
+        
+        Paciente actualizado = repo.save(pacienteExistente);
+        
+        return mapper.toDTO(actualizado);
     }
 
     @Override
     public void eliminarPaciente(Long id) {
-      
+      repo.deleteById(id);
     }
     
 }
