@@ -20,8 +20,13 @@ public class PacienteMapper {
         dto.setId(paciente.getId());
         dto.setEmail(paciente.getEmail());
         dto.setUsername(paciente.getUsername());
-        dto.setRol(paciente.getRole());
+        dto.setRole(paciente.getRole());
+        
+        dto.setPeso(paciente.getPeso());
+        dto.setAltura(paciente.getAltura());
+        dto.setFechaNacimiento(paciente.getFechaNacimiento());
         dto.setGrupoSanguineo(paciente.getGrupoSanguineo());
+        dto.setGenero(paciente.getGenero());
         
         return dto;
     }
@@ -37,12 +42,14 @@ public class PacienteMapper {
         
         paciente.setId(dto.getId());
         paciente.setUsername(dto.getUsername());
-        paciente.setAltura(dto.getAltura());
-        paciente.setPeso(dto.getPeso());
         paciente.setEmail(dto.getEmail());
+        paciente.setRole(dto.getRole());
+        
         paciente.setGenero(dto.getGenero());
         paciente.setFechaNacimiento(dto.getFechaNacimiento());
         paciente.setGrupoSanguineo(dto.getGrupoSanguineo());
+        paciente.setAltura(dto.getAltura());
+        paciente.setPeso(dto.getPeso());
         
         return paciente;
     }

@@ -2,6 +2,8 @@ package com.app.segumed.mappers;
 
 import com.app.segumed.dto.MedicoDTO;
 import com.app.segumed.models.Medico;
+
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,6 +18,7 @@ public class MedicoMapper {
         dto.setId(medico.getId());
         dto.setUsername(medico.getUsername());
         dto.setEmail(medico.getEmail());
+        
         dto.setEspecialidad(medico.getEspecialidad());
 
         return dto;
@@ -30,6 +33,7 @@ public class MedicoMapper {
         medico.setId(dto.getId());
         medico.setUsername(dto.getUsername());
         medico.setEmail(dto.getEmail());
+        
         medico.setEspecialidad(dto.getEspecialidad());
 
         return medico;
