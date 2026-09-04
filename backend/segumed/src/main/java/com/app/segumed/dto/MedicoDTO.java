@@ -9,8 +9,8 @@ public class MedicoDTO extends UsuarioDTO {
     public MedicoDTO() {
     }
 
-    public MedicoDTO(Long id, String nombre, String email, RoleUsuario rol, String especialidad) {
-        super(id, nombre, email, rol);
+    public MedicoDTO(Long id, String username, String email, RoleUsuario role, String especialidad) {
+        super(id, username, email, role);
         this.especialidad = especialidad;
     }
     
