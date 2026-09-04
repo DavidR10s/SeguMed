@@ -1,6 +1,7 @@
 package com.app.segumed.mappers;
 
 import com.app.segumed.dto.MedicoDTO;
+import com.app.segumed.dto.CrearMedicoDTO;
 import com.app.segumed.models.Medico;
 
 
@@ -18,13 +19,13 @@ public class MedicoMapper {
         dto.setId(medico.getId());
         dto.setUsername(medico.getUsername());
         dto.setEmail(medico.getEmail());
-        
+        dto.setRole(medico.getRole());
         dto.setEspecialidad(medico.getEspecialidad());
 
         return dto;
     }
     
-    public Medico toEntity(MedicoDTO dto) {
+    public Medico toEntity(CrearMedicoDTO dto) {
         if (dto == null) {
             return null;
         }
@@ -33,6 +34,8 @@ public class MedicoMapper {
         medico.setId(dto.getId());
         medico.setUsername(dto.getUsername());
         medico.setEmail(dto.getEmail());
+        medico.setPassword(dto.getPassword());
+        medico.setRole(dto.getRole());
         
         medico.setEspecialidad(dto.getEspecialidad());
 
