@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "medicos")
+@PrimaryKeyJoinColumn(name = "id_usuario")
 public class Medico extends Usuario 
 {
 
