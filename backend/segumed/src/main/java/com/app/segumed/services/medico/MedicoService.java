@@ -1,6 +1,7 @@
 
 package com.app.segumed.services.medico;
 
+import com.app.segumed.dto.CrearMedicoDTO;
 import com.app.segumed.dto.MedicoDTO;
 import com.app.segumed.models.Medico;
 import com.app.segumed.repositories.IMedicoRepository;
@@ -30,9 +31,18 @@ public class MedicoService implements IMedicoService {
         
         return medicos.stream().map(mapper::toDTO).collect(Collectors.toList());
     }
+    
+    @Override
+    public List<MedicoDTO> buscarMedico(String username)
+    {
+        List<Medico> medicos = repo.findByUsernameContainingIgnoreCase(username);
+        
+        return medicos.stream().map(mapper::toDTO).collect(Collectors.toList());
+    }
 
     @Override
-    public MedicoDTO crearMedico(MedicoDTO medicoDto) {
+    public MedicoDTO crearMedico(CrearMedicoDTO medicoDto) {
+        
         Medico medico = mapper.toEntity(medicoDto);
         
         Medico guardado = repo.save(medico);
@@ -59,5 +69,6 @@ public class MedicoService implements IMedicoService {
         
         repo.deleteById(id);
     }
+
     
 }
