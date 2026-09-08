@@ -39,6 +39,7 @@ public class MedicoService implements IMedicoService {
         
         return medicos.stream().map(mapper::toDTO).collect(Collectors.toList());
     }
+    
 
     @Override
     public MedicoDTO crearMedico(CrearMedicoDTO medicoDto) {
@@ -49,15 +50,37 @@ public class MedicoService implements IMedicoService {
         
         return mapper.toDTO(guardado);
     }
+    
+    @Override
+    public MedicoDTO medicoSelec(String username) 
+    {
+        Medico medicoSelec = repo.findByUsername(username);
+        
+        return mapper.toDTO(medicoSelec);
+    }
+
 
     @Override
     public MedicoDTO actualizarMedico(Long id, MedicoDTO medicoDto) {
         Medico medicoExistente = repo.findById(id).orElse(null);
         
-        medicoExistente.setUsername(medicoDto.getUsername());
-        medicoExistente.setEmail(medicoDto.getEmail());
-        medicoExistente.setRole(medicoDto.getRole());
-        medicoExistente.setEspecialidad(medicoDto.getEspecialidad());
+        if(medicoDto.getUsername() != null)
+        {
+            medicoExistente.setUsername(medicoDto.getUsername());
+        }
+        if(medicoDto.getEmail() != null)
+        {
+            medicoExistente.setEmail(medicoDto.getEmail());
+        }
+        if(medicoDto.getRole() != null)
+        {
+            medicoExistente.setRole(medicoDto.getRole());
+        }
+        if(medicoDto.getEspecialidad() != null)
+        {
+            medicoExistente.setEspecialidad(medicoDto.getEspecialidad());
+        }
+        
         
         Medico actualizado = repo.save(medicoExistente);
         
