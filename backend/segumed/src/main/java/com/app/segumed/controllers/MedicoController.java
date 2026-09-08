@@ -41,6 +41,16 @@ public class MedicoController {
     }
     
     
+    // GET: http://localhost:8080/api/medicos/Dr.%20Pablo%20Neruda
+    @GetMapping("/{username}")
+    public ResponseEntity<MedicoDTO> medicoSelecionado(@PathVariable String username)
+    {
+        MedicoDTO medicoSelec = this.medicoServices.medicoSelec(username);
+        
+        return ResponseEntity.ok(medicoSelec);
+    }
+    
+    
     
     @PostMapping
     public ResponseEntity<MedicoDTO> crearMedico(@RequestBody CrearMedicoDTO medicoDto)
@@ -50,5 +60,12 @@ public class MedicoController {
         return new ResponseEntity<>(creado, HttpStatus.CREATED);
     }
     
+    @PatchMapping("/{id}")
+    public ResponseEntity<MedicoDTO> modificarMedico(@PathVariable Long id, @RequestBody MedicoDTO medicoDto)
+    {
+        MedicoDTO medicoActualizado = this.medicoServices.actualizarMedico(id, medicoDto);
+        
+        return ResponseEntity.ok(medicoActualizado);
+    }
     
 }
