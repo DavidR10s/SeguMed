@@ -10,6 +10,7 @@ public interface IMedicoService {
     
     List<MedicoDTO> listarMedico();
     List<MedicoDTO> buscarMedico(String Username);
+    MedicoDTO medicoSelec(String username);
     MedicoDTO crearMedico(CrearMedicoDTO medicoDto);
     MedicoDTO actualizarMedico(Long id, MedicoDTO medicoDto);
     void eliminarMedico(Long id);
