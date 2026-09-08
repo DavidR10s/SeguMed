@@ -7,4 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface IMedicoRepository extends JpaRepository<Medico, Long> {
 
     List<Medico> findByUsernameContainingIgnoreCase(String username);
+    Medico findByUsername(String username);
 }
