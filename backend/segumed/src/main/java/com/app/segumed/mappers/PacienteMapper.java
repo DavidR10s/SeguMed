@@ -1,7 +1,8 @@
 package com.app.segumed.mappers;
 
+import com.app.segumed.dto.paciente.CrearPacienteDTO;
 import org.springframework.stereotype.Component;
-import com.app.segumed.dto.PacienteDTO;
+import com.app.segumed.dto.paciente.PacienteDTO;
 import com.app.segumed.models.Paciente;
 
 
@@ -31,7 +32,7 @@ public class PacienteMapper {
         return dto;
     }
     
-    public Paciente toEntity(PacienteDTO dto)
+    public Paciente toEntity(CrearPacienteDTO dto)
     {
         if(dto == null)
         {
@@ -47,9 +48,10 @@ public class PacienteMapper {
         
         paciente.setGenero(dto.getGenero());
         paciente.setFechaNacimiento(dto.getFechaNacimiento());
-        paciente.setGrupoSanguineo(dto.getGrupoSanguineo());
-        paciente.setAltura(dto.getAltura());
-        paciente.setPeso(dto.getPeso());
+        
+        // paciente.setGrupoSanguineo(dto.getGrupoSanguineo());
+        // paciente.setAltura(dto.getAltura());
+        // paciente.setPeso(dto.getPeso());
         
         return paciente;
     }
