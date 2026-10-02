@@ -1,5 +1,6 @@
-package com.app.segumed.dto;
+package com.app.segumed.dto.paciente;
 
+import com.app.segumed.dto.UsuarioDTO;
 import com.app.segumed.enums.RoleUsuario;
 import java.time.LocalDate;
 
@@ -15,13 +16,14 @@ public class PacienteDTO extends UsuarioDTO {
     public PacienteDTO() {
     }
 
-    public PacienteDTO(String grupoSanguineo) {
-        this.grupoSanguineo = grupoSanguineo;
-    }
 
-    public PacienteDTO(Long id, String username, String email, RoleUsuario role, String grupoSanguineo) {
+    public PacienteDTO(Long id, String username, String email, RoleUsuario role, LocalDate fechaNacimiento, float peso, float altura, String genero ,String grupoSanguineo) {
         super(id, username, email, role);
         this.grupoSanguineo = grupoSanguineo;
+        this.fechaNacimiento = fechaNacimiento;
+        this.altura = altura = altura;
+        this.genero = genero;
+        this.peso = peso;
     }
 
     public String getGrupoSanguineo() {
