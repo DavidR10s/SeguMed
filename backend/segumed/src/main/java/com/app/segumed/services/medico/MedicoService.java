@@ -1,8 +1,8 @@
 
 package com.app.segumed.services.medico;
 
-import com.app.segumed.dto.CrearMedicoDTO;
-import com.app.segumed.dto.MedicoDTO;
+import com.app.segumed.dto.medico.CrearMedicoDTO;
+import com.app.segumed.dto.medico.MedicoDTO;
 import com.app.segumed.models.Medico;
 import com.app.segumed.repositories.IMedicoRepository;
 import com.app.segumed.mappers.MedicoMapper;
