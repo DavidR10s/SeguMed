@@ -1,5 +1,6 @@
-package com.app.segumed.dto;
+package com.app.segumed.dto.medico;
 
+import com.app.segumed.dto.UsuarioDTO;
 import com.app.segumed.enums.RoleUsuario;
 
 public class CrearMedicoDTO  extends UsuarioDTO {
