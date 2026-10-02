@@ -15,10 +15,10 @@ public class Paciente extends Usuario {
     @Column(nullable = false)
     private LocalDate fechaNacimiento;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private float peso;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private float altura;
 
     @Column(nullable = false)
