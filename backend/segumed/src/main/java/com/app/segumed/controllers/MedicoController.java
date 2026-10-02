@@ -1,7 +1,7 @@
 package com.app.segumed.controllers;
 
-import com.app.segumed.dto.MedicoDTO;
-import com.app.segumed.dto.CrearMedicoDTO;
+import com.app.segumed.dto.medico.MedicoDTO;
+import com.app.segumed.dto.medico.CrearMedicoDTO;
 import com.app.segumed.services.medico.IMedicoService;
 import java.util.List;
 import org.springframework.http.HttpStatus;
