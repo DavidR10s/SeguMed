@@ -29,4 +29,17 @@ public class Reporte {
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 
+    public Reporte() {
+    }
+
+    public Reporte(Long id, String asunto, String descripcion, Medico medico, Paciente paciente) {
+        this.id = id;
+        this.asunto = asunto;
+        this.descripcion = descripcion;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+    
+    
+
 }
