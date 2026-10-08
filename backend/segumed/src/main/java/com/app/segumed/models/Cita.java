@@ -23,4 +23,18 @@ public class Cita {
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 
+    public Cita() {
+    }
+    
+    
+
+    public Cita(Long id, LocalDateTime fechaHora, Medico medico, Paciente paciente) {
+        this.id = id;
+        this.fechaHora = fechaHora;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+    
+    
+
 }
