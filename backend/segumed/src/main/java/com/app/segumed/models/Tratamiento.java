@@ -31,4 +31,18 @@ public class Tratamiento {
     @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
+
+    public Tratamiento() {
+    }
+
+    public Tratamiento(Long id, LocalDateTime fechaInicio, LocalDateTime fechaFin, EstadoTratamiento estado, Medico medico, Paciente paciente) {
+        this.id = id;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.estado = estado;
+        this.medico = medico;
+        this.paciente = paciente;
+    }
+    
+    
 }
