@@ -16,6 +16,13 @@ public class PacienteService implements IPacienteService{
     private IPacienteRepository repo;
     private PacienteMapper mapper;
 
+    public PacienteService(IPacienteRepository repo, PacienteMapper mapper) {
+        this.repo = repo;
+        this.mapper = mapper;
+    }
+    
+    
+
     @Override
     public List<PacienteDTO> listarPacientes() {
         
