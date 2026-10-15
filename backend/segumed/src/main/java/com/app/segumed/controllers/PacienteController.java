@@ -26,7 +26,7 @@ public class PacienteController {
         this.pacienteService = pacienteService;
     }
     
-    @GetMapping("/")
+    @GetMapping()
     public ResponseEntity<List<PacienteDTO>> listarPacientes()
     {
         List<PacienteDTO> pacientes = this.pacienteService.listarPacientes();
