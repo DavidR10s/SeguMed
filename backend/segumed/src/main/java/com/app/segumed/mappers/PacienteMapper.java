@@ -45,6 +45,7 @@ public class PacienteMapper {
         paciente.setUsername(dto.getUsername());
         paciente.setEmail(dto.getEmail());
         paciente.setRole(dto.getRole());
+        paciente.setPassword(dto.getPassword());
         
         paciente.setGenero(dto.getGenero());
         paciente.setFechaNacimiento(dto.getFechaNacimiento());
