@@ -43,7 +43,7 @@ public class PacienteController {
     }
     
     @GetMapping("/{username}")
-    public ResponseEntity<PacienteDTO> pacienteSeleccionado(String username)
+    public ResponseEntity<PacienteDTO> pacienteSeleccionado(@PathVariable String username)
     {
         
         PacienteDTO pacienteSelec = this.pacienteService.pacienteSeleccionado(username);
