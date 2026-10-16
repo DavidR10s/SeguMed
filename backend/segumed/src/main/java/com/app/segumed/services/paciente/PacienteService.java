@@ -44,12 +44,21 @@ public class PacienteService implements IPacienteService{
     public PacienteDTO actualizarPaciente(Long id, PacienteDTO pacienteDto) {
         Paciente pacienteExistente = repo.findById(id).orElse(null);
         
+        if(pacienteDto.getUsername() != null)
+        {
+            pacienteExistente.setUsername(pacienteDto.getUsername());
+        }
+        if(pacienteDto.getEmail() != null)
+        {
+            pacienteExistente.setEmail(pacienteDto.getEmail());
+        }
+        if(pacienteDto.getGenero() != null)
+        {
+            pacienteExistente.setGenero(pacienteDto.getGenero());
+        }
         pacienteExistente.setAltura(pacienteDto.getAltura());
-        pacienteExistente.setEmail(pacienteDto.getEmail());
-        pacienteExistente.setGenero(pacienteDto.getGenero());
         pacienteExistente.setPeso(pacienteDto.getPeso());
         pacienteExistente.setGrupoSanguineo(pacienteDto.getGrupoSanguineo());
-        pacienteExistente.setUsername(pacienteDto.getUsername());
         
         Paciente actualizado = repo.save(pacienteExistente);
         
