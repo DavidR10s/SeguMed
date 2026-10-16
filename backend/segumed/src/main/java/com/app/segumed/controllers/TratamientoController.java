@@ -36,7 +36,7 @@ public class TratamientoController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Tratamiento> mostrarTratamiento(Long id)
+    public ResponseEntity<Tratamiento> mostrarTratamiento(@PathVariable Long id)
     {
         Tratamiento mostrado = this.tratamientoServices.mostrarTratamiento(id);
         return ResponseEntity.ok(mostrado);
